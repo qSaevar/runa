@@ -1,14 +1,9 @@
 node{
-         def scmVars
-
     stage('build') {
 
-
-}
-         stage('Deploy') {
-
-
-          }
-
+        steps {
+            sh 'python --version'
+        }
     }
+}
 
