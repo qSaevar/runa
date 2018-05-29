@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Collect') {
             steps {
-                step([$class: 'CoberturaPublisher', coberturaReportFile: 'coverage.xml'])
+                step([$class: 'CoberturaPublisher'])
             }
         }
     }
