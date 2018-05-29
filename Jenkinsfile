@@ -11,9 +11,6 @@ pipeline {
                 sh 'python --version'
                 sh 'pwd'
                 sh 'ls -lah'
-                sh 'coverage run --source="./src/qc" -m unittest discover -s src/tests -t src -v'
-                sh 'coverage report -m'
-                sh 'coverage xml'
             }
         }
         stage('Collect') {
