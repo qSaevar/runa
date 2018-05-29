@@ -13,10 +13,6 @@ pipeline {
                 sh 'ls -lah'
             }
         }
-        stage('Collect') {
-            steps {
-                step([$class: 'CoberturaPublisher'])
-            }
-        }
+
     }
 }
