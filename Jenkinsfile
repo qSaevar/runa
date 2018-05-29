@@ -27,6 +27,7 @@ node{
               }
 
               // Get the ID of the GitHub Deployment just created
+              echo('sent response')
               def responseJson = readJSON text: response.content
               def id = responseJson.id
               if(id == "") {
