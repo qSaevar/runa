@@ -17,7 +17,7 @@ node{
               def ref = scmVars.GIT_COMMIT
               def owner = "qSaevar"
               def repo = "runa"
-              def deployURL = "https://api.github.com/repos/${owner}/${repo}/deployments"
+              def deployURL = "https://api.github.com/repos/${owner}/${repo}"
               def deployBody = '{"ref": "' + ref +'","environment": "' + environment  +'","description": "' + description + '"}'
 
               // Create new Deployment using the GitHub Deployment API
