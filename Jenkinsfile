@@ -21,7 +21,7 @@ node{
               def deployBody = '{"ref": "' + ref +'","environment": "' + environment  +'","description": "' + description + '"}'
 
               // Create new Deployment using the GitHub Deployment API
-              def response = httpRequest authentication: 'issc29-GH', httpMode: 'POST', requestBody: deployBody, responseHandle: 'STRING', url: deployURL
+              def response = httpRequest authentication: 'saevar-test', httpMode: 'POST', requestBody: deployBody, responseHandle: 'STRING', url: deployURL
               if(response.status != 201) {
                   error("Deployment API Create Failed: " + response.status)
               }
@@ -40,7 +40,7 @@ node{
               def result = (deployStatus) ? 'failure' : 'success'
               def deployStatusBody = '{"state": "' + result + '","target_url": "http://github.com/deploymentlogs"}'
               def deployStatusURL = "https://api.github.com/repos/${owner}/${repo}/deployments/${id}/statuses"
-              def deployStatusResponse = httpRequest authentication: 'issc29-GH', httpMode: 'POST', requestBody: deployStatusBody , responseHandle: 'STRING', url: deployStatusURL
+              def deployStatusResponse = httpRequest authentication: 'saevar-test', httpMode: 'POST', requestBody: deployStatusBody , responseHandle: 'STRING', url: deployStatusURL
               if(deployStatusResponse.status != 201) {
                 error("Deployment Status API Update Failed: " + deployStatusResponse.status)
                }
